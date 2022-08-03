@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Bookshelf Apps</h1>
+      </nav>
+    </header>
+    <main>
+      <section class="input-buku">
+        <h2>Masukkan Buku Baru</h2>
+        <form action="" id="form-inputBuku">
+          <input type="hidden" name="id" id="id" />
+          <label for="judul">Judul</label>
+          <input type="text" placeholder="Harry Potter" id="judul" required />
+          <label for="penulis">Penulis</label>
+          <input type="text" placeholder="Kang Adri" id="penulis" required />
+          <label for="tahun">Tahun</label>
+          <input type="number" placeholder="2007" id="tahun" required />
+          <input type="checkbox" id="done" />
+          <label for="done" id="done">Selesai dibaca</label>
+          <button type="submit" id="submitInput">Masukkan Buku ke Rak Belum dibaca</button>
+        </form>
+      </section>
+      <section class="cari-buku">
+        <h2>Cari Buku (Opsional)</h2>
+        <form action="" id="form-buku">
+          <label for="search">Judul Buku</label>
+          <div class="search">
+            <input type="text" id="search-buku" />
+            <button type="submit" id="cariBuku">Cari</button>
+          </div>
+        </form>
+      </section>
+      <section class="belum-dibaca">
+        <h2>Belum Selesai Dibaca</h2>
+      </section>
+      <section class="sudah-dibaca">
+        <h2>Sudah Selesai Dibaca</h2>
+      </section>
+    </main>
+    <a href="" class="mode-toggle">
+      <img src="assets/img/moon.png" alt="Image" width="60%" id="iconTheme" />
+    </a>
+    <script src="assets/script.js"></script>
+  </body>
+</html>

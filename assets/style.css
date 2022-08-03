@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --background-utama: rgb(0, 153, 94);
+  --box-shadow: 0 0 4px rgba(0, 99, 61, 0.37);
+  --item-shadow: 0 0 8px rgba(0, 99, 61, 0.61);
+  --art-shadow: 0 0 2px rgba(12, 182, 117, 0.61);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  background-color: rgb(0, 99, 61);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin-top: 80px;
+}
+
+section {
+  width: 600px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+h2 {
+  margin: 20px 0;
+  color: var(--background-utama);
+}
+
+#form-inputBuku label,
+#form-inputBuku input {
+  display: block;
+}
+
+#form-inputBuku input:not(#done) {
+  width: 400px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1.6px solid var(--background-utama);
+  padding: 0 6px;
+  color: var(--background-utama);
+}
+
+#form-inputBuku input:not(#done):focus {
+  box-shadow: 0 0 5px rgba(0, 99, 61, 0.37);
+  border: 1.6px solid var(--background-utama);
+  outline: none;
+}
+
+#form-inputBuku label {
+  color: var(--background-utama);
+  font-weight: 500;
+}
+
+#form-inputBuku label:not(#done) {
+  margin-top: 15px;
+}
+
+#form-inputBuku #done {
+  display: inline;
+  margin-top: 15px;
+}
+
+#form-inputBuku button {
+  background-color: var(--background-utama);
+  border: none;
+  width: 100%;
+  padding: 7px 7px;
+  border-radius: 3px;
+  color: white;
+  font-weight: 700;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+}
+
+#form-inputBuku button:hover {
+  box-shadow: var(--item-shadow);
+}
+
+#form-buku {
+  margin-bottom: 25px;
+}
+
+#form-buku label {
+  color: var(--background-utama);
+  font-weight: 500;
+}
+
+.search {
+  width: 400px;
+  height: 25px;
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 1.6px solid var(--background-utama);
+  padding-left: 6px;
+  color: var(--background-utama);
+  box-sizing: border-box;
+}
+
+.search button {
+  position: absolute;
+  padding: 0 10px;
+  font-weight: 800;
+  color: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: var(--background-utama);
+  cursor: pointer;
+}
+
+article {
+  display: block;
+  box-shadow: var(--art-shadow);
+  width: 400px;
+  border-radius: 7px;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+article:hover {
+  box-shadow: var(--box-shadow);
+}
+
+article h3 {
+  color: var(--background-utama);
+}
+
+article p {
+  margin: 7px 0;
+  font-weight: 500;
+}
+
+article p .tahun {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+article button {
+  border: none;
+  padding: 5px 6px;
+  border-radius: 2px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button#selesai {
+  background-color: var(--background-utama);
+  color: white;
+}
+
+button#hapus {
+  background-color: rgb(151, 0, 0);
+  color: white;
+}
+
+button#belum {
+  background-color: var(--background-utama);
+  color: white;
+}
+
+.green {
+  background-color: gold;
+  box-shadow: 0 0 15px rgba(0, 99, 61, 0.37);
+  transition: all 0.3s ease-in-out;
+}
+
+.mode-toggle {
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 45px;
+  height: 45px;
+  bottom: 30px;
+  right: 30px;
+  box-shadow: 0 0 4px rgb(56, 56, 56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#iconTheme {
+  transition: all 0.3s ease-in-out;
+}
+
+.buat-body {
+  background-color: rgb(56, 56, 56);
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    width: 90%;
+  }
+}
