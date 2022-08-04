@@ -12,36 +12,46 @@ let submitCariBuku = document.getElementById("cariBuku");
 // Section - Belum Selesai Dibaca;
 let articleBelumDibaca = document.querySelector(".belum-dibaca");
 let judulBelumDibaca = document.querySelector(".belum-dibaca h3");
-let penulis = document.querySelector(".penulis");
-let text = '{"employees":[{"firstName":"John","lastName":"Doe" },{"firstName":"Anna","lastName":"Smith" },{"firstName":"Peter","lastName":"Jones" }]}';
+let penulis = document.querySelectorAll("#penulisBelumDibaca");
 
 // Section - Sudah selesai dibaca;
 let articleSudahDIbaca = document.querySelector(".sudah-dibaca");
 let judulSudahDibaca = document.querySelector(".sudah-dibaca h3");
-let penulisSudahDibaca = document.querySelector(".sudah-dibaca .penulis");
+let penulisSudahDibaca = document.querySelectorAll("#penulisSudahDibaca");
 let tahunSudahDibaca = document.querySelector(".sudah-dibaca .tahun");
+
+let setDefault = document.getElementById("setDefault");
+
+setDefault.addEventListener("click", () => {
+  let konfirmasi = confirm("Apakah anda yakin akan mereset data anda di website ini?");
+  if (konfirmasi === true) {
+    localStorage.clear();
+  }
+});
+
+let nilaiDefault = localStorage.getItem("NILAI_BUKU");
+
+if (!nilaiDefault) {
+  localStorage.setItem("NILAI_BUKU", "[]");
+}
+const storageKey = "NILAI_BUKU";
 
 submitInput.addEventListener("click", (e) => {
   let storageKey = "NILAI_BUKU";
   let nilai = JSON.parse(localStorage.getItem(storageKey));
-  for (let x = 0; x < nilai.length; x++) {
-    if (nilai[x].judul.toUpperCase() == inputJudul.value.toUpperCase()) {
-      alert("Judul Buku sudah ada, silahkan input buku yang lain");
-    } else {
-      let inputUser = {
-        judul: inputJudul.value,
-        penulis: inputPenulis.value,
-        tahun: inputTahun.value,
-        checked: checkbox.checked,
-      };
-      ambilData(inputUser);
-    }
-  }
+
+  let inputUser = {
+    judul: inputJudul.value,
+    penulis: inputPenulis.value,
+    tahun: inputTahun.value,
+    checked: checkbox.checked,
+  };
+
+  ambilData(inputUser);
   // e.preventDefault();
 });
 
 function ambilData(inputUser) {
-  const storageKey = "NILAI_BUKU";
   let userData = [];
 
   let getItem = localStorage.getItem(storageKey);
@@ -61,7 +71,7 @@ for (let i of userDataHasil) {
       articleSudahDIbaca.innerHTML += `<article>
       <h3>${i.judul}</h3>
       <p>
-        <span class="penulis">${i.penulis}</span>
+        <span id="penulisSudahDibaca">${i.penulis}</span>
         <span class="tahun">${i.tahun}</span>
       </p>
       <form action="">
@@ -73,7 +83,7 @@ for (let i of userDataHasil) {
       articleBelumDibaca.innerHTML += `<article>
       <h3>${i.judul}</h3>
       <p>
-        <span class="penulis">${i.penulis}</span>
+        <span id="penulisBelumDibaca">${i.penulis}</span>
         <span class="tahun">${i.tahun}</span>
       </p>
       <form action="">

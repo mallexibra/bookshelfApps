@@ -210,12 +210,30 @@ button#belum {
   align-items: center;
 }
 
+#setDefault {
+  display: block;
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  padding: 7px 15px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
 #iconTheme {
   transition: all 0.3s ease-in-out;
 }
 
 .buat-body {
-  background-color: rgb(56, 56, 56);
+  background-color: rgb(51, 51, 51);
+}
+
+.color-white {
+  color: white;
 }
 
 @media screen and (max-width: 500px) {
