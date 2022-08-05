@@ -22,7 +22,7 @@ let tahunSudahDibaca = document.querySelector(".sudah-dibaca .tahun");
 
 let setDefault = document.getElementById("setDefault");
 
-setDefault.addEventListener("click", () => {
+setDefault.addEventListener("click", (e) => {
   let konfirmasi = confirm("Apakah anda yakin akan mereset data anda di website ini?");
   if (konfirmasi === true) {
     localStorage.clear();
@@ -48,7 +48,6 @@ submitInput.addEventListener("click", (e) => {
   };
 
   ambilData(inputUser);
-  // e.preventDefault();
 });
 
 function ambilData(inputUser) {
@@ -144,6 +143,8 @@ submitCariBuku.addEventListener("click", (e) => {
   for (let y = 0; y < item.length; y++) {
     if (item[y].judul.toUpperCase() == input.toUpperCase()) {
       article[y].classList.add("green");
+    } else {
+      article[y].classList.remove("green");
     }
   }
   e.preventDefault();
