@@ -16,5 +16,9 @@ You can easy to use,you can visit [this link](https://mallexibra.github.io/books
 3. If you finished to read a book, you can click button `selesai` on section `Belum Selesai Dibaca` or `hapus` to delete book from website
 4. If you unfinished to read a book, you can click button `belum` on section `Sudah Selesai Dibaca` or `hapus` to delete book from website
 5. And last feature, you can search a book from website on section `Cari Buku (Opsional)`.
+6. And additional feature, you can click button `set default` to reset data books on website and you can use Dark Mode from website with click button `dark mode`
+
+## Showcase
+![Show Project BookShelf Apps](assets/img/bookshelfapps.png)
 
 This project is the final project of one of the classes in [dicoding.com](https://www.dicoding.com/) :shipit:
